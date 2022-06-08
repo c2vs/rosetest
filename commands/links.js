@@ -11,8 +11,8 @@ module.exports = new Command({
                 const embed = new MessageEmbed();
                 embed.setColor('#44b868');
                 embed.setDescription(`**Links:**\n
-                Want to contribute?
-                https://github.com/nizeic/Dodong
+                Want to support me?
+                https://tiktok.com/@c2vs
                 Online Web Player
                 ${process.env.WEBPLAYER || config.webplayer}?guildID=${message.guild.id}\n`);
                 
