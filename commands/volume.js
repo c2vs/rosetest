@@ -1,6 +1,6 @@
 const Command = require("../structures/command.js");
 const { MessageEmbed } = require('discord.js');
-const maxVolume = 100;
+const maxVolume = 99999999999999999999999999999999999999999999;
 
 module.exports = new Command({
     name: "volume",
