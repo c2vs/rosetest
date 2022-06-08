@@ -2,26 +2,26 @@ const Command = require("../structures/command.js");
 
 module.exports = new Command({
 	name: "play",
-    aliases: ['p'],
-	description: "Plays the song specified",
+    aliases: ['p', 'شغلي'],
+	description: "تشغلك اغنيه شتتوقع تسوي؟🤨",
 	permission: "SEND_MESSAGES",
     options: [
         { description: 'URL or song name', name: 'song', required: true, type: 3 }
     ],
 	async run(message, args, client, slash) {
         if(!message.member.voice.channelId)
-            return message.reply({ embeds: [{ description: `You are not in a voice channel!`, color: 0xb84e44 }], ephemeral: true, failIfNotExists: false });
+            return message.reply({ embeds: [{ description: `طب روم علمود تشغل🌹`, color: 0xb84e44 }], ephemeral: true, failIfNotExists: false });
         if(message.guild.me.voice.channelId && message.member.voice.channelId !== message.guild.me.voice.channelId)
-            return message.reply({ embeds: [{ description: `You are not in my voice channel!`, color: 0xb84e44 }], ephemeral: true, failIfNotExists: false });
+            return message.reply({ embeds: [{ description: `لازم تطب بالروم الي اني بي🗿`, color: 0xb84e44 }], ephemeral: true, failIfNotExists: false });
         if(!args[0]) return;
         
         if(!message.guild.me.permissionsIn(message.member.voice.channel).has(client.requiredVoicePermissions)) return;
 
         if(slash) await message.deferReply();
         let query = args.join(" "), reply = {};
-        const searchResult = await client.player.search(query, { requestedBy: slash ? message.user : message.author, searchEngine: "dodong" })
+        const searchResult = await client.player.search(query, { requestedBy: slash ? message.user : message.author, searchEngine: "احلى بوت من صنع الحلو 𝐊𝐀𝐁𝐀𝐁#6969" })
         if (!searchResult || !searchResult.tracks.length) {
-            reply = { embeds: [{ description: `No results found!`, color: 0xb84e44 }], ephemeral: true, failIfNotExists: false };
+            reply = { embeds: [{ description: `ماكو هيج فيديو🤨`, color: 0xb84e44 }], ephemeral: true, failIfNotExists: false };
             slash ? message.editReply(reply) : message.reply(reply);
             return;
         }
