@@ -3,15 +3,15 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = new Command({
 	name: "ping",
-	aliases: [],
+	aliases: ['البنق'],
 	description: "Shows the ping of the bot",
 	permission: "SEND_MESSAGES",
 	async run(message, args, client, slash) {
 		const embed = new MessageEmbed()
-			.setDescription(` :green_circle: API latency: **${client.ws.ping} ms**`).setColor('#b84e44');
+			.setDescription(` <a:emoji_107:974808429816324166> | البنگ: **${client.ws.ping} ms**`).setColor('#b84e44');
 		const m = await message.reply({ embeds: [embed] });
 		const msg = slash ? await message.fetchReply() : m;
-		embed.setDescription(` :green_circle: API latency: **${client.ws.ping} ms**\n :orange_circle: Message latency: **${msg.createdTimestamp - message.createdTimestamp} ms**\n`).setColor('#44b868');
+		embed.setDescription(` <a:emoji_107:974808429816324166> | البنگ **${client.ws.ping} ms**\n <a:emoji_107:974808429816324166> | استجابه الرساله: **${msg.createdTimestamp - message.createdTimestamp} ms**\n`).setColor('#44b868');
 		msg.edit(
 			{ embeds: [embed] }
 		);
