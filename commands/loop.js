@@ -3,8 +3,8 @@ const { QueueRepeatMode } = require('discord-player');
 const { MessageEmbed } = require('discord.js');
 module.exports = new Command({
 	name: "loop",
-    aliases: ['repeat'],
-	description: "Loops the server queue",
+    aliases: ['repeat', 'عيدي'],
+	description: "تعيدلك الاغنيه يعني تبقى تشتغل حتى لو طلعت",
 	permission: "SEND_MESSAGES",
     options: [
         { description: 'Loop mode to set', name: 'mode', type: 3 }
@@ -15,20 +15,20 @@ module.exports = new Command({
         if(args.length === 0) {
             if(await queue.repeatMode === QueueRepeatMode.OFF || await queue.repeatMode === QueueRepeatMode.AUTOPLAY) {
                 queue.setRepeatMode(QueueRepeatMode.QUEUE);
-                return message.reply({ embeds: [{ description: `🔄 | Looping the **queue**.`, color: 0x44b868}] });
+                return message.reply({ embeds: [{ description: `🔄 | راح اعيدلك كل الاغاني **queue**.`, color: 0x44b868}] });
             }
             else if(await queue.repeatMode === QueueRepeatMode.QUEUE) {
                 queue.setRepeatMode(QueueRepeatMode.TRACK);
-                return message.reply({ embeds: [{ description: `🔂 | Looping the **current track**.`, color: 0x44b868}] });
+                return message.reply({ embeds: [{ description: `🔂 | راح اعيد بس هاي الاغنيه🌹 **current track**.`, color: 0x44b868}] });
             }
             else if(await queue.repeatMode === QueueRepeatMode.TRACK) {
                 queue.setRepeatMode(QueueRepeatMode.OFF);
-                return message.reply({ embeds: [{ description: `✅ | Loop is now **disabled**.`, color: 0x44b868}] });
+                return message.reply({ embeds: [{ description: `✅ | الاعاده طفيته **disabled**.`, color: 0x44b868}] });
             }
         }
         if(args.includes("off") || args.includes("disable") || args.includes("none")) { 
             queue.setRepeatMode(QueueRepeatMode.OFF);
-            slash ? message.reply({embeds: [{ description: `✅ Loop is now disabled.`, color: 0x44b868 }]}) : message.react("✅");
+            slash ? message.reply({embeds: [{ description: `✅ الاعاده طفيته.`, color: 0x44b868 }]}) : message.react("✅");
         }
         else if(args.includes("track") || args.includes("song") || args.includes("current")) {
             queue.setRepeatMode(QueueRepeatMode.TRACK);
