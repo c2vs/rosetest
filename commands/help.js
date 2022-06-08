@@ -24,7 +24,7 @@ module.exports = new Command({
 			});
             if(commands.length) {
 				const embed = new MessageEmbed();
-				embed.setAuthor({ name: `Commands` });
+				embed.setAuthor({ name: `Commands by 𝐊𝐀𝐁𝐀𝐁#6969` });
                 embed.setDescription(`${commands.join('\n')}`);
                 embed.setColor(page%2 ? '#44b868' : '#b84e44');
                 pages.push(embed);
