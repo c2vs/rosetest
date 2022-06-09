@@ -2,7 +2,7 @@ const Command = require("../structures/command.js");
 
 module.exports = new Command({
 	name: "disconnect",
-	aliases: ['dc', 'انجبي'],
+	aliases: ['dc', 'انجبي', 'stop'],
 	description: "تطفي الاغاني وتطلع من الروم",
 	permission: "SEND_MESSAGES",
 	async run(message, args, client, slash) {
