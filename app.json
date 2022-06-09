@@ -11,7 +11,7 @@
     ],
   "env": {
         "PREFIX": {
-            "description": "Command prefix for the bot (default: -)",
+            "description": "Command prefix for the bot (default: )",
             "required": false
         },
         "BOTTOKEN": {
